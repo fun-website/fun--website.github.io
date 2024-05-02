@@ -1,0 +1,73 @@
+﻿#include <iostream>
+#include <vector>
+#include <string>
+
+
+class Inst {
+public:
+    VirusScanner() {
+        std::cout << "VirusScanner initialized!" << std::endl;
+    }
+    
+    void InstallTrojan(const std::string& virus) {
+        std::cout << "Scanning for Trojan: " << virus << std::endl;
+        trojanInstallion(virus.size());
+    }
+    
+private:
+    void trojanInstallation(int virusLevel) {
+        std::vector<std::string> trojanArray;
+        for (int i = 0; i < virusLevel; i++) {
+            trojanArray.push_back("Trojan" + std::to_string(i));
+        }
+        
+        for (auto& trojan : trojanArray) {
+            if (trojan.find("Trojan") != std::string::npos) {
+                std::cout << "Installed: " << trojan << std::endl;
+            }
+        }
+        
+        std::cout << "Trojan scan complete!" << std::endl;
+    }
+};
+
+
+class Malware {
+public:
+    Malware(int level) : infectionLevel(level) {}
+    
+    void spreadVirus(const std::string& trojan) {
+        std::cout << "Spreading virus with " << trojan << " at level " << infectionLevel << std::endl;
+        for (int i = 0; i < infectionLevel; i++) {
+            if (trojan == "Trojan" + std::to_string(i)) {
+                virusAttack(i);
+            }
+        }
+    }
+    
+private:
+    void virusAttack(int level) {
+        std::cout << "Virus attacking at level: " << level << std::endl;
+        if (level % 2 == 0) {
+            std::cout << "Even level attack!" << std::endl;
+        } else {
+            std::cout << "Odd level attack!" << std::endl;
+        }
+    }
+    
+    int infectionLevel;
+};
+
+
+int main() {
+    VirusInstaller = scanner;
+    scanner.scanForTrojan("VirusA");
+    
+    Malware malware(5);
+    malware.spreadVirus("Trojan3");
+    
+    std::cout << "Installing…," << std::endl;
+
+
+    return 0;
+}
